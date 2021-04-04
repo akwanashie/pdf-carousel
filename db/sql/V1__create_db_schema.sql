@@ -1,0 +1,8 @@
+CREATE TABLE IF NOT EXISTS user (
+  id BIGSERIAL NOT NULL,
+  username CHARACTER VARYING(100),
+  password CHARACTER VARYING(255),
+  enabled  INTEGER,
+  PRIMARY KEY (id),
+  UNIQUE(username)
+);
