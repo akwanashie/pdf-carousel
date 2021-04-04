@@ -5,7 +5,7 @@ module.exports = function() {
 
     return {
         flywayArgs: {
-            url: `jdbc:${matches[1]}://${matches[3]}/${matches[4]}`,
+            url: `jdbc:postgresql://${matches[3]}/${matches[4]}`,
             schemas: 'public',
             locations: 'filesystem:db/sql',
             user: user,
