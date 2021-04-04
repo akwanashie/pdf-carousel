@@ -1,12 +1,30 @@
-<html>
-  {{> header}}
-  <body>
-    <div class="container" style="padding:20px">
-     <div class="card card-body bg-light">
-     <h1>Error</h1>
-     Something went wrong!
+<!DOCTYPE html>
+<html lang="en">
+
+{{> partials/header}}
+
+<body>
+    <div id="app">
+        <div id="sidebar" class="active">
+            {{> partials/sidebar}}
+        </div>
+        <div id="main">
+            {{> partials/page-title}}
+            <section class="section">
+                <div class="card">
+                    <div class="card-header">
+                        <h4 class="card-title">Something went wrong!</h4>
+                    </div>
+                    <div class="card-body">
+                        An error occured while processing your request.
+                        We have taken note and will look to resolve it ASAP!
+                    </div>
+                </div>
+            </section>
+
+            {{> partials/footer}}
+        </div>
     </div>
-  </div>
-  {{> footer}}
- </body>
+</body>
+
 </html>

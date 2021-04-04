@@ -3,7 +3,7 @@ var router = express.Router();
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('index', { title: 'PDF Carousel' });
+  res.render('index', { title: 'Home', subTitle: 'Create, manage and display PDF carousels' });
 });
 
 module.exports = router;
