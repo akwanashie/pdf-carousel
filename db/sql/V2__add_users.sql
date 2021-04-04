@@ -1,1 +1,1 @@
-INSERT INTO TABLE users (username, password, enabled) VALUES ("admin", "$2a$04$Ixj/v9YT4uI7wQVt5dtKsuiCyBZjH9Rt6GbOOH.hkg/0gBOcqDDs2", 1);
+INSERT INTO users (username, password, enabled) VALUES ("admin", "$2a$04$Ixj/v9YT4uI7wQVt5dtKsuiCyBZjH9Rt6GbOOH.hkg/0gBOcqDDs2", 1);
