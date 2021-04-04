@@ -1,14 +1,17 @@
 module.exports = function() {
+    const pattern = /^(?:([^:\/?#\s]+):\/{2})?(?:([^@\/?#\s]+)@)?([^\/?#\s]+)?(?:\/([^?#\s]*))?(?:[?]([^#\s]+))?\S*$/;
+    const matches =  process.env.DATABASE_URL.match(pattern);
+    const [user, password] = matches[2].split(':');
+
     return {
         flywayArgs: {
-            url: 'jdbc:postgresql://ec2-54-155-87-214.eu-west-1.compute.amazonaws.com:5432/dbcd1n769vf969',
+            url: `jdbc:${matches[1]}://${matches[3]}/${matches[4]}`,
             schemas: 'public',
             locations: 'filesystem:db/sql',
-            user: 'fzyxnmerqqoaht',
-            password: 'b50a28b6a7b73e7636c7e582a3d0d7aa6701e9b9f5416af8576c6372ecee0709',
+            user: user,
+            password: password,
             sqlMigrationSuffixes: '.sql',
             baselineOnMigrate: true,
-        },
-        env: { }
+        }
     };
 };
