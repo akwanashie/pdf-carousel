@@ -14,6 +14,7 @@
                     </div>
                     <div class="card-content">
                         <div class="card-body">
+                            {{#error}} <b>{{error}}</b> {{/error}}
                             <form class="form form-horizontal" method="POST" action="/login">
                                 <div class="form-body">
                                     <div class="row">
