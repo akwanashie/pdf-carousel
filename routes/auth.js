@@ -14,9 +14,10 @@ router.get('/logout', function(req, res, next) {
 
 router.post('/login', function(req, res, next) {
   // hard-code username and password for intial pass.
-  if (req.body.username === "admin" && req.body.password === "password") {
+  if (req.body.username === 'admin' && req.body.password === 'password') {
     req.session.username = req.body.username;
-    req.session.role = 'user';
+    req.session.role = 'User';
+    req.session.fullName = 'Administrator';
     res.redirect('/');  
   } else {
     res.render('login', { error: 'Invalid username and/or password.' });

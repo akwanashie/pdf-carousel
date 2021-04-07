@@ -4,17 +4,24 @@
 {{> partials/header}}
 
 <body>
+    <div style="height:200px;"></div>
     <div class="container">
         <div class="row">
             <div class="col-sm"></div>
             <div class="col-sm">
-                <div class="card">
-                    <div class="card-header">
-                        <h4 class="card-title">Login</h4>
+                <div class="card" id="login-card">
+                    <div class="card-header" id="login-header">
+                        <h4 class="card-title" id="login-title">Login</h4>
                     </div>
                     <div class="card-content">
                         <div class="card-body">
-                            {{#error}} <b>{{error}}</b> {{/error}}
+                            {{#error}}
+                                <div class="alert alert-danger alert-dismissible show fade">
+                                    {{error}}
+                                    <button type="button" class="btn-close" data-bs-dismiss="alert"
+                                        aria-label="Close"></button>
+                                </div>
+                            {{/error}}
                             <form class="form form-horizontal" method="POST" action="/login">
                                 <div class="form-body">
                                     <div class="row">
@@ -23,14 +30,14 @@
                                         </div>
                                         <div class="col-md-8 form-group">
                                             <input type="text" id="first-name" class="form-control"
-                                                name="username" placeholder="User Name">
+                                                name="username" placeholder="">
                                         </div>
                                         <div class="col-md-4">
                                             <label>Password</label>
                                         </div>
                                         <div class="col-md-8 form-group">
                                             <input type="password" id="password" class="form-control"
-                                                name="password" placeholder="Password">
+                                                name="password" placeholder="">
                                         </div>
                                         <div class="col-12 col-md-8 offset-md-4 form-group">
                                             <div class='form-check'>
@@ -57,5 +64,9 @@
             <div class="col-sm"></div>
         </div>
     </div>
+
+    <script src="/themes/mazer/assets/vendors/perfect-scrollbar/perfect-scrollbar.min.js"></script>
+    <script src="/themes/mazer/assets/js/bootstrap.bundle.min.js"></script>
+    <script src="/themes/mazer/assets/js/main.js"></script>
 </body>
 </html>

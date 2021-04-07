@@ -1,8 +1,26 @@
-body {
+/* body {
   padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 
 a {
   color: #00B7FF;
+} */
+
+#login-card {
+  border-style: solid;
+  border-color:darkcyan;
+  border-width: 2px;
+}
+
+#login-header {
+  border-bottom-style: solid;
+  border-bottom-color:darkcyan;
+  border-bottom-width: 2px;
+}
+
+#login-title {
+  text-align: center;
+  margin-bottom: 0px;
+  font-size: 30px;
 }
