@@ -12,6 +12,8 @@ module.exports = function() {
             password: password,
             sqlMigrationSuffixes: '.sql',
             baselineOnMigrate: true,
+            _host: matches[3],
+            _db: matches[4]
         }
     };
 };
