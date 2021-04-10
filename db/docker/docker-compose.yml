@@ -1,0 +1,19 @@
+version: '3'
+
+services:
+
+  pdfcarousel-db:
+    image: postgres
+    container_name: pdfcarousel-db
+    restart: always
+    ports:
+      - 5432:5432
+    environment:
+      POSTGRES_USER: dbuser
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: pdfcarousel
+    networks:
+      - pdfcarousel-db-network
+
+networks:
+  pdfcarousel-db-network:
