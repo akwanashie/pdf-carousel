@@ -1,11 +1,14 @@
-var createError = require('http-errors');
-var express = require('express');
-var path = require('path');
-var logger = require('morgan');
-let mustacheExpress = require('mustache-express');
+const createError = require('http-errors');
+const express = require('express');
+const path = require('path');
+const logger = require('morgan');
+const mustacheExpress = require('mustache-express');
 const session = require('express-session');
+const fs = require('fs');
+const config = require('./lib/config');
 const indexRouter = require('./routes/index');
 const loginRouter = require('./routes/login');
+const filesRouter = require('./routes/files');
 const authMiddleware = require('./lib/auth');
 
 const app = express();
@@ -32,6 +35,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', loginRouter);
 app.use(authMiddleware.isUserLoggedIn);
 app.use('/', indexRouter);
+app.use('/', filesRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
@@ -48,5 +52,10 @@ app.use(function(err, req, res, next) {
   res.status(err.status || 500);
   res.render('error', { title: 'Error' });
 });
+
+if (!fs.existsSync(config.uploadDir)) {
+  console.log(`Creating upload dir: ${config.uploadDir}`);
+  fs.mkdirSync(config.uploadDir);
+}
 
 module.exports = app;

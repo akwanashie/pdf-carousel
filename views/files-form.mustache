@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+{{> partials/header}}
+
+<body>
+    <div id="app">
+        <div id="sidebar" class="active">
+            {{> partials/sidebar}}
+        </div>
+        <div id="main">
+            {{> partials/page-title}}
+            
+            <section class="section">
+                <div class="col-md-9 col-12">
+                    <div class="card">
+                        <div class="card-header">
+                            <h4 class="card-title">Add New File</h4>
+                        </div>
+                        <div class="card-content">
+                            <div class="card-body">
+                                <form class="form form-horizontal" action="/add-file" method="post" enctype="multipart/form-data">
+                                    <div class="form-body">
+                                        <div class="row">
+                                            <div class="col-md-12 form-group">
+                                                <input class="form-control" type="file" id="file" name="file">
+                                            </div>
+                                            <div class="col-md-3">
+                                                <label>Title</label>
+                                            </div>
+                                            <div class="col-md-9 form-group">
+                                                <input type="text" id="title" class="form-control"
+                                                    name="title">
+                                            </div>
+                                            <div class="col-md-3">
+                                                <label>Description</label>
+                                            </div>
+                                            <div class="col-md-9 form-group">
+                                                <textarea class="form-control" id="description" name="description"
+                                            rows="3"></textarea>
+                                            </div>
+                                            <div class="col-12 col-md-9 offset-md-3 form-group">
+                                                <div class='form-check'>
+                                                    <div class="checkbox">
+                                                        <input type="checkbox" id="enabled" name="enabled" class='form-check-input' checked>
+                                                        <label for="enabled">Enabled</label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-12 d-flex justify-content-end">
+                                                <button type="submit"
+                                                    class="btn btn-primary me-1 mb-1">Add File</button>
+                                                <button type="reset"
+                                                    class="btn btn-light-secondary me-1 mb-1">Cancel</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            {{> partials/footer}}
+        </div>
+    </div>
+</body>
+
+</html>

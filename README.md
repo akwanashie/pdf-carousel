@@ -34,3 +34,14 @@ A simple PDF carousel app built on Express.js
     ```bash
     docker-compose -f db/docker/docker-compose.yml down -v
     ```
+
+## To Do
+
+- Use logger instead of `console.log`
+- Load config based on env
+- Fix broken side links
+- Add button to crate new file
+- Display "file saved" confirmation
+- Display error if file not saved
+- Do some field validation
+- Delete app from joint heroku
