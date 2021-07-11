@@ -6,6 +6,7 @@ const mustacheExpress = require('mustache-express');
 const session = require('express-session');
 const fs = require('fs');
 const config = require('./lib/config');
+const appLogger = require('./lib/logger');
 const indexRouter = require('./routes/index');
 const loginRouter = require('./routes/login');
 const filesRouter = require('./routes/files');
@@ -54,7 +55,7 @@ app.use(function(err, req, res, next) {
 });
 
 if (!fs.existsSync(config.uploadDir)) {
-  console.log(`Creating upload dir: ${config.uploadDir}`);
+  appLogger.info(`Creating upload dir: ${config.uploadDir}`);
   fs.mkdirSync(config.uploadDir);
 }
 

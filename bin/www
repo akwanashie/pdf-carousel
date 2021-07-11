@@ -7,6 +7,8 @@
 var app = require('../app');
 var debug = require('debug')('pdf-carousel:server');
 var http = require('http');
+const appLogger = require('../lib/logger');
+
 
 /**
  * Get port from environment and store in Express.
@@ -89,4 +91,4 @@ function onListening() {
   debug('Listening on ' + bind);
 }
 
-console.log(`Listening on port: ${port}`);
+appLogger.info(`Listening on port: ${port}`);

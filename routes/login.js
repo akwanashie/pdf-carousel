@@ -1,10 +1,12 @@
 const express = require('express');
 const auth = require('../lib/auth');
+const appLogger = require('../lib/logger');
+
 const router = express.Router();
 
 router.get('/login', function(req, res, next) {
   req.session.destroy((error) => {
-    if (error) { console.log(`Unable to reset session: ${error}`); }
+    if (error) { appLogger.error(`Unable to reset session: ${error}`); }
   });
   res.render('login');
 });
