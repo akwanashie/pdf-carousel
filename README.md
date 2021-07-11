@@ -37,7 +37,6 @@ A simple PDF carousel app built on Express.js
 
 ## To Do
 
-- Use logger instead of `console.log`
 - Load config based on env
 - Fix broken side links
 - Add button to crate new file
