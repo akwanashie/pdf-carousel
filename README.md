@@ -43,4 +43,4 @@ A simple PDF carousel app built on Express.js
 - Display "file saved" confirmation
 - Display error if file not saved
 - Do some field validation
-- Delete app from joint heroku
+- Actually save the file to s3

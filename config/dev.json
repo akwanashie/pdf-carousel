@@ -1,7 +1,7 @@
 {
     "s3": {
         "enabled": true,
-        "bucket": "...",
+        "bucket": "",
         "path": ""
     },
     "uploadDir": ".tmp"
