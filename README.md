@@ -37,10 +37,9 @@ A simple PDF carousel app built on Express.js
 
 ## To Do
 
-- Load config based on env
-- Fix broken side links
 - Add button to crate new file
 - Display "file saved" confirmation
 - Display error if file not saved
 - Do some field validation
+- Add table to view all files
 - Actually save the file to s3
