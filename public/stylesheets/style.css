@@ -24,3 +24,7 @@ a {
   margin-bottom: 0px;
   font-size: 30px;
 }
+
+.bottom-pad {
+  padding-bottom: 10px;
+}

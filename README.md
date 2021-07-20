@@ -37,7 +37,6 @@ A simple PDF carousel app built on Express.js
 
 ## To Do
 
-- Add button to crate new file
 - Display "file saved" confirmation
 - Display error if file not saved
 - Do some field validation
